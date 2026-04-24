@@ -8,12 +8,31 @@ import week from "./week.js";
 const app = {
 setup() {
         const show = ref(false);
+        const page = ref(1);
 
         function showContent(){
                 show.value = true;
 
         }
-        return {show, showContent}
+
+        function nextPage(){
+                if(page.value == 4){
+                        page.value = 4;
+                }
+                else{
+                        page.value = page.value + 1;
+                }
+                
+        }
+        function lastPage(){
+                if(page.value == 1){
+                        page.value = 1;
+                }
+                else{
+                        page.value = page.value - 1;
+                }              
+        }
+        return {show, showContent, page, nextPage, lastPage}
 }
 }
 const vueApp = createApp(app)
