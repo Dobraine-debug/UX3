@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min lilla komponent - vue är magi</title>
+    <style>
+        table{
+            text-align: center;
+
+
+        }
+        .columnTable{
+            align-items: center;
+            width: 300px;
+            padding-bottom: 10px;
+            border-left: 7px solid #747272;
+
+        }
+        .lastColumn{
+            align-items: center;
+            width: 300px;
+            border-right: 10px;
+            padding-bottom: 10px;
+
+        }
+        .hantverkare{
+            grid-column: 1;
+            grid-row: 2;
+            float: left;
+        }
+        .week1{
+            table-layout: fixed;
+            width: 300px;
+            align-items: center;
+            grid-column: 2;
+            grid-row: 2
+        }
+        .week2{
+            table-layout: fixed;
+            width: 300px;
+            align-items: center;
+            grid-column: 3;
+            grid-row: 2
+        }
+        .week3{
+            table-layout: fixed;
+            width: 300px;
+            align-items: center;
+            grid-column: 4;
+            grid-row: 2
+        }
+        .week4{
+            table-layout: fixed;
+            width: 300px;
+            align-items: center;
+            grid-column: 5;
+            grid-row: 2
+        }
+        .v0{
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .v1{
+            grid-column:2;
+            grid-row: 1;
+            width: 60px;
+            text-align: center;
+        }
+        .v2{
+            grid-column:3;
+            grid-row: 1;
+            width: 60px;
+            text-align: center;
+
+        }
+            .v3{
+            grid-column:4;
+            grid-row: 1;
+            width: 60px;
+            text-align: center;
+
+        }
+            .v4{
+            grid-column:5;
+            grid-row: 1;
+            width: 60px;
+            text-align: center;
+
+        }
+
+        button{
+            width:40px;
+            height: 25px;
+
+        }
+        .names{
+            grid-column: 1;
+            grid-row:3/10;
+        }
+        .name{
+            height: 20%;
+
+            
+        }
+        .column{
+            grid-column: 2;
+            grid-row:2/3;
+        }
+        .column2{
+            grid-column: 3;
+            grid-row:2/3;
+        }
+                .column3{
+            grid-column: 4;
+            grid-row:2/3;
+        }
+                .column4{
+            grid-column: 5;
+            grid-row:2/3;
+        }
+        .container{
+            display: grid;
+        }
+        .booked_full{
+            background-color: #869BBD;
+            color: #869BBD;
+        }
+        .booked_half{
+            background-color: #FCDE4B;
+            color: #FCDE4B;
+        }
+        .prel_booked_full{
+            background-color: #C5D8F5;
+            color: #C5D8F5;
+            border: 2px dotted #434343;
+        }
+        .prel_booked_half{
+            background-color: #FCDE4B;
+            color: #FCDE4B;
+            border: 2px dotted #434343;
+        }
+        .absent{
+
+        }
+    </style>
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3.5.28/dist/vue.esm-browser.js"
+            },
+            "integrity": {
+                "https://unpkg.com/vue@3.5.28/dist/vue.esm-browser.js": "sha384-Q3gg1uvxzo7j5a5zJyKw57OkLMyOhl1sGmQxxn63S3lsr8Ki3ACSKKSvK8zG//7D"
+            }
+        }
+    </script>
+    <script defer src="https://unpkg.com/vue@3.0.5"></script>
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="showContent">Show</button>
+        <div class = "container" v-if="show">
+        <span class="v0"></span>
+        <b class="v1">V1</b>
+        <b class="v2">V2</b>
+        <b class="v3">V3</b>
+        <b class="v4">V4</b>
+        <span class="hantverkare">Hantverkare</span>
+        <span class ="names"><names></names></span>
+        <week type = "week1"></week>
+        <table class="column"><column></column></table>
+        <week type="week2"></week>
+        <table class = "column2"><column></column></table>
+        <week type="week3"></week>
+        <table class ="column3"><column></column></table>
+        <week type="week4"></week>
+        <table class = "column4"><column></column></table>
+        </div>
+        <div v-else></div>
+    
+        
+        
+        
+        
+        
+    </div>
+</body>
+</html>
