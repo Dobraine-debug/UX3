@@ -4,10 +4,7 @@ import row from './row.js'
 
 
 export default {
-    setup(){
-        const names = ref(["Test testsson", "David Skansholm", "Josefina Runnquist", "Karl Karlqvist", "Egon Pettersson"]);
-        return {names};
-    },
+    props:{names:Array},
     template: `<table v-for = "name of names" class="name">
     <tr>{{ name }}</tr>
     </table>`

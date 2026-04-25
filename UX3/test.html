@@ -10,6 +10,10 @@
 
 
         }
+        .dateRange{
+            position: relative;
+            bottom:5px;
+        }
         .columnTable{
             align-items: center;
             width: 300px;
@@ -156,26 +160,86 @@
     </script>
     <script defer src="https://unpkg.com/vue@3.0.5"></script>
     <script type="module" src="app.js"></script>
+    <script>
+    </script>
 </head>
 <body>
     <div id="app">
+        <p><img src="Back.png" @click="lastPage"><img src="Calendar.png"><span class ="dateRange" v-if="page == 1">1 januari 2026 - 26 januari 2026</span>
+            <span class ="dateRange" v-else-if="page == 2">29 januari 2026 - 23 februari 2026</span>
+            <span class ="dateRange" v-else-if="page == 3">26 februari 2026 - 21 mars 2026</span>
+            <span class ="dateRange" v-else-if="page == 4">24 mars 2026 - 18 april 2026</span><img src="Forward.png" @click="nextPage"></p>
         <button @click="showContent">Show</button>
-        <div class = "container" v-if="show">
+        <div v-if="show">
+
+        <div class = "container" v-if="page == 1">
         <span class="v0"></span>
-        <b class="v1">V1</b>
-        <b class="v2">V2</b>
-        <b class="v3">V3</b>
-        <b class="v4">V4</b>
+        <b class="v1">V{{firstWeek}}</b>
+        <b class="v2">V{{secondWeek}}</b>
+        <b class="v3">V{{thirdWeek}}</b>
+        <b class="v4">V{{fourthWeek}}</b>
         <span class="hantverkare">Hantverkare</span>
-        <span class ="names"><names></names></span>
-        <week type = "week1"></week>
-        <table class="column"><column></column></table>
-        <week type="week2"></week>
-        <table class = "column2"><column></column></table>
-        <week type="week3"></week>
-        <table class ="column3"><column></column></table>
-        <week type="week4"></week>
-        <table class = "column4"><column></column></table>
+        <span class ="names"><names :names="names"></names></span>
+        <week  type = "week1" :dates="v1"></week>
+        <week type="week2" :dates="v2"></week>
+        <week type="week3" :dates="v3"></week>
+        <week type="week4" :dates="v4"></week>
+        <table class="column"><column :weeks="weekOne"></column></table>
+        <table class = "column2"><column :weeks = "weekOne"></column></table>
+        <table class ="column3"><column :weeks = "weekOne"></column></table>
+        <table class = "column4"><column :weeks = "weekOne"></column></table></div>
+
+        <div class = "container" v-else-if="page == 2">
+        <span class="v0"></span>
+        <b class="v1">V{{firstWeek}}</b>
+        <b class="v2">V{{secondWeek}}</b>
+        <b class="v3">V{{thirdWeek}}</b>
+        <b class="v4">V{{fourthWeek}}</b>
+        <span class="hantverkare">Hantverkare</span>
+        <span class ="names"><names :names="names"></names></span>
+        <week  type = "week1" :dates="v5"></week>
+        <week type="week2" :dates="v6"></week>
+        <week type="week3" :dates="v7"></week>
+        <week type="week4" :dates="v8"></week>
+        <table class="column"><column :weeks="weekOne"></column></table>
+        <table class = "column2"><column :weeks = "weekOne"></column></table>
+        <table class ="column3"><column :weeks = "weekOne"></column></table>
+        <table class = "column4"><column :weeks = "weekOne"></column></table></div>
+
+        <div class = "container" v-else-if="page == 3">
+        <span class="v0"></span>
+        <b class="v1">V{{firstWeek}}</b>
+        <b class="v2">V{{secondWeek}}</b>
+        <b class="v3">V{{thirdWeek}}</b>
+        <b class="v4">V{{fourthWeek}}</b>
+        <span class="hantverkare">Hantverkare</span>
+        <span class ="names"><names :names="names"></names></span>
+        <week  type = "week1" :dates="v9"></week>
+        <week type="week2" :dates="v10"></week>
+        <week type="week3" :dates="v11"></week>
+        <week type="week4" :dates="v12"></week>
+        <table class="column"><column :weeks="weekOne"></column></table>
+        <table class = "column2"><column :weeks = "weekOne"></column></table>
+        <table class ="column3"><column :weeks = "weekOne"></column></table>
+        <table class = "column4"><column :weeks = "weekOne"></column></table></div>
+
+        <div class = "container" v-else-if="page == 4">
+        <span class="v0"></span>
+        <b class="v1">V{{firstWeek}}</b>
+        <b class="v2">V{{secondWeek}}</b>
+        <b class="v3">V{{thirdWeek}}</b>
+        <b class="v4">V{{fourthWeek}}</b>
+        <span class="hantverkare">Hantverkare</span>
+        <span class ="names"><names :names="names"></names></span>
+        <week  type = "week1" :dates="v13"></week>
+        <week type="week2" :dates="v14"></week>
+        <week type="week3" :dates="v15"></week>
+        <week type="week4" :dates="v16"></week>
+        <table class="column"><column :weeks="weekOne"></column></table>
+        <table class = "column2"><column :weeks = "weekOne"></column></table>
+        <table class ="column3"><column :weeks = "weekOne"></column></table>
+        <table class = "column4"><column :weeks = "weekOne"></column></table></div>
+        
         </div>
         <div v-else></div>
     
